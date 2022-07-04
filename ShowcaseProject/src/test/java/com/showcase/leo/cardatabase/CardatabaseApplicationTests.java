@@ -1,4 +1,4 @@
-package com.packt.cardatabase;
+package com.showcase.leo.cardatabase;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
