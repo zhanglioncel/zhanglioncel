@@ -1,4 +1,4 @@
-package com.packt.cardatabase.domain;
+package com.showcase.leo.cardatabase.domain;
 
 import org.springframework.data.repository.CrudRepository;
 

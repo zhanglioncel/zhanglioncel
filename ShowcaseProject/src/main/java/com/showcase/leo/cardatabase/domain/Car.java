@@ -1,4 +1,4 @@
-package com.packt.cardatabase.domain;
+package com.showcase.leo.cardatabase.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,13 +7,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.*;
+
 
 @Entity
+@Table(name="carinfor")
 public class Car {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	private String brand, model, color, registerNumber;
+	@Size(min=3,max=20)
+	private String brand; 
+	private String model, color;
+	@NotNull
+	private String registerNumber;
 	private int year, price;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
