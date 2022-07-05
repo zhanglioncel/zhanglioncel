@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.*;
+
 
 @Entity
 @Table(name="carinfor")
@@ -15,7 +17,11 @@ public class Car {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-	private String brand, model, color, registerNumber;
+	@Size(min=3,max=20)
+	private String brand; 
+	private String model, color;
+	@NotNull
+	private String registerNumber;
 	private int year, price;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
